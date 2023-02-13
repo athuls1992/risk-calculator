@@ -1,12 +1,18 @@
 const loanAmountInput = document.querySelector(".loan-amount");
-const interestRateInput = document.querySelector(".interest-rate");
-const loanTenureInput = document.querySelector(".loan-tenure");
+const interestRateInput = document.querySelector('#industry');
+const loanTenureInput = document.querySelector('#employee');
+
+// const avgCost = document.querySelector(".loan-emi .value");
+// const finRisk = document.querySelector(".total-interest .value");
 
 const loanEMIValue = document.querySelector(".loan-emi .value");
 const totalInterestValue = document.querySelector(".total-interest .value");
-const totalAmountValue = document.querySelector(".total-amount .value");
+const totalAmountValue = document.querySelector(".total-amount .value ");
 
 const calculateBtn = document.querySelector(".calculate-btn");
+
+// let annualRevenue = parseFloat(loanAmountInput.value);
+// let busType = parseFloat(interestRateInput.value);
 
 let loanAmount = parseFloat(loanAmountInput.value);
 let interestRate = parseFloat(interestRateInput.value);
@@ -41,11 +47,11 @@ const displayChart = (totalInterestPayableValue) => {
   myChart = new Chart(ctx, {
     type: "pie",
     data: {
-      labels: ["Total Interest", "Principal Loan Amount"],
+      labels: ["Avg. Risk", "Compared to industry"],
       datasets: [
         {
           data: [totalInterestPayableValue, loanAmount],
-          backgroundColor: ["#e63946", "#14213d"],
+          backgroundColor: ["#e63946", "#040404"],
           borderWidth: 0,
         },
       ],
