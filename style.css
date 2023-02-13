@@ -5,7 +5,7 @@
   background: #fff;
   box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  color: #14213d;
+  color: #000000;
   overflow: hidden;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .loan-calculator .top {
-  background: #14213d;
+  background: #040404;
   color: #fff;
   padding: 32px;
 }
@@ -35,6 +35,12 @@
 }
 
 .loan-calculator form input {
+  font-size: 20px;
+  padding: 8px 24px;
+  width: 100%;
+}
+
+.loan-calculator form select {
   font-size: 20px;
   padding: 8px 24px;
   width: 100%;
@@ -73,7 +79,7 @@
 }
 
 .loan-calculator .calculate-btn {
-  background: #e63946;
+  background: #fd0901;
   color: #fff;
   border: none;
   padding: 8px 32px;
