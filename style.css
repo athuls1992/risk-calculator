@@ -1,12 +1,24 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .loan-calculator {
-  font-family: "Roboto", sans-serif;
-  width: 600px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  width: 960px;
   margin: 24px auto;
   background: #fff;
   box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   color: #000000;
   overflow: hidden;
+}
+
+.no-border{
+  border-bottom: 0px;
 }
 
 .loan-calculator,
@@ -22,6 +34,10 @@
 
 .loan-calculator .top h2 {
   margin-top: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 28px;
 }
 
 .loan-calculator form {
@@ -36,20 +52,20 @@
 
 .loan-calculator form input {
   font-size: 20px;
-  padding: 8px 24px;
-  width: 100%;
+  padding: 8px 0px;
+  
 }
 
 .loan-calculator form select {
   font-size: 20px;
   padding: 8px 24px;
-  width: 100%;
 }
 
 .loan-calculator .result {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .loan-calculator .result .left {
@@ -78,6 +94,14 @@
   opacity: 0.4;
 }
 
+.loan-calculator .result .percent .value::before {
+  content: "%";
+  font-size: 24px;
+  font-weight: 400;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
 .loan-calculator .calculate-btn {
   background: #fd0901;
   color: #fff;
@@ -87,11 +111,27 @@
   font-size: 18px;
   font-weight: 900;
   cursor: pointer;
-  margin: 24px 0;
+  margin: 0px 30px 30px;
+  width: 50%;
+  height: 50px;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .loan-calculator .right {
   width: 50%;
+}
+
+.center {
+  background: #040404;
+  position: relative;
+}
+
+.center-button{
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 @media (max-width: 650px) {
