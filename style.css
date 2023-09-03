@@ -59,6 +59,7 @@ body {
 .loan-calculator form select {
   font-size: 20px;
   padding: 8px 24px;
+  -webkit-appearance: none;
 }
 
 .loan-calculator .result {
