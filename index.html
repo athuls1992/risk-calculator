@@ -6,76 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Risk Calculator</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
   </head>
   <body>
     <div class="loan-calculator">
-      <div class="top">
+      <div class="top" style="justify-content: center; align-items:center">
         <h2>Risk Calculator</h2>
 
-        <form action="#">
+        <form action="#" id="myForm">
           <div class="group">
-            <div class="title">Annual Revenue</div>
-            <input type="text" value="0" class="loan-amount" />
+            <div class="title" id="dname">Company website address?</div>        
+            <input type="url" class="domain-type" id="fields" name="field" placeholder="https://example.com" pattern="https://.*" onblur="ValidURL(this.value)"/>
+          </div>
+          <div class="group">
+            <div class="title">Annual Revenue?</div>
+            <input type="number" value="" class="annual-rev" placeholder="$10000"/>
           </div>
 
           <div class="group">
             <div class="title">Business Industry</div>
-            <select id="industry"  class="interest-rate">
-              <option type="text" value="1836100">Communication</option>
-              <option type="text" value="826550">Construction</option>
-              <option type="text" value="1616500">Consumer</option>
-              <option type="text" value="2379000">Education</option>
-              <option type="text" value="2379000">Energy</option>
-              <option type="text" value="2488800">Entertainment</option>
-              <option type="text" value="2379000">Financial</option>
-              <option type="text" value="4349300">Healthcare</option>
-              <option type="text" value="1049200">Hospitality</option>
-              <option type="text" value="3043900">Industrial</option>
-              <option type="text" value="4123600">Manufacturing</option>
-              <option type="text" value="1006500">Media</option>
-              <option type="text" value="3086600">Pharma</option>
-              <option type="text" value="658800">Public</option>
-              <option type="text" value="994300">Research</option>
-              <option type="text" value="1226100">Retail</option>
-              <option type="text" value="2580300">Services</option>
-              <option type="text" value="3074400">Technology</option>
-              <option type="text" value="2183800">Transportation</option>
+            <select id="industry"  class="industry-base">
+              <option id="industry0" select="selected" value="0">select</option>
+              <option id="industry1" value="1836100">Communication</option>
+              <option id="industry2" value="826550">Construction</option>
+              <option id="industry3" value="1616500">Consumer</option>
+              <option id="industry4" value="2379000">Education</option>
+              <option id="industry5" value="2379000">Energy</option>
+              <option id="industry6" value="2488800">Entertainment</option>
+              <option id="industry7" value="2379000">Financial</option>
+              <option id="industry8" value="4349300">Healthcare</option>
+              <option id="industry9" value="1049200">Hospitality</option>
+              <option id="industry10" value="3043900">Industrial</option>
+              <option id="industry11" value="4123600">Manufacturing</option>
+              <option id="industry12" value="1006500">Media</option>
+              <option id="industry13" value="3086600">Pharma</option>
+              <option id="industry14" value="658800">Public</option>
+              <option id="industry15" value="994300">Research</option>
+              <option id="industry16" value="1226100">Retail</option>
+              <option id="industry17" value="2580300">Services</option>
+              <option id="industry18" value="3074400">Technology</option>
+              <option id="industry19" value="2183800">Transportation</option>
             </select>
            
           </div>
 
           <div class="group">
-            <div class="title">No.of Employees</div>
+            <div class="title">Employees</div>
             <select id="employee"  class="loan-tenure">
-              <option type="number" value="1">1-50</option>
-              <option type="number" value="1">51-250</option>
-              <option type="number" value="1">251-500</option>
-              <option type="number" value="1">501-750</option>
-              <option type="number" value="1">751-1000</option>
-              <option type="number" value="1">1000+</option>
+              <option id="employee1" select="selected" value="50">1-50</option>
+              <option id="employee2" value="70">51-250</option>
+              <option id="employee3" value="100">251-500</option>
+              <option id="employee4" value="107">501-750</option>
+              <option id="employee5" value="125">751-1000</option>
+              <option id="employee6" value="161">1000+</option>
               </select>
           </div>
         </form>
       </div>
-
+      <div class="center">
+        <div class="center-button">
+          <button onclick="validateForm(); sendIt();" class="calculate-btn">Calculate</button>  
+        </div>    
+      </div>
       <div class="result">
         <div class="left">
-          <div class="loan-emi">
-            <h3>Avg. cost of attack</h3>
-            <div class="value">123</div>
+          <div class="avg-cost">
+            <h3>Avg. cost of attack based on industry</h3>
+            <div class="value" id="emivalue">123</div>
           </div>
 
           <div class="total-interest">
             <h3>Financial Risk</h3>
-            <div class="value">1234.5</div>
+            <div class="value" style="border: none;">1234</div>
           </div>
 
-          <div class="total-amount">
-            <h3>Total Loss</h3>
-            <div class="value">12345</div>
+          <div class="total-amount percent" style="display:none;">
+            <h3>Chance of attack!</h3>
+            <div class="value">59</div>
           </div>
 
-          <button class="calculate-btn">Calculate</button>
+          
         </div>
 
         <div class="right">
