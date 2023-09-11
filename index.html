@@ -19,10 +19,7 @@
         <h2>Risk Calculator</h2>
 
         <form action="#" id="myForm">
-          <div class="group">
-            <div class="title" id="dname">Company website address?</div>        
-            <input type="url" class="domain-type" id="fields" name="field" placeholder="https://example.com" pattern="https://.*" onblur="ValidURL(this.value)"/>
-          </div>
+          
           <div class="group">
             <div class="title">Annual Revenue?</div>
             <input type="number" value="" class="annual-rev" placeholder="$10000"/>
@@ -65,6 +62,10 @@
               <option id="employee5" value="125">751-1000</option>
               <option id="employee6" value="161">1000+</option>
               </select>
+          </div>
+          <div class="group">
+            <div class="title" id="dname">Company website address?</div>        
+            <input type="url" class="domain-type" id="fields" name="field" placeholder="https://example.com" pattern="https://.*" onblur="ValidURL(this.value)"/>
           </div>
         </form>
       </div>
