@@ -52,7 +52,7 @@ const displayChart = (totalInterestPayableValue) => {
         {
           label: ["Financial Risk"],
           data: [totalInterestPayableValue,avgCost],
-          backgroundColor: ["#e63946", "#040404"],
+          backgroundColor: ["#4d42f2", "#040404"],
           borderWidth: 0,
         },
       ],
