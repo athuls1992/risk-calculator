@@ -139,7 +139,7 @@ var formData = {
 function validateForm() {
   let x = document.forms["myForm"]["field"].value;
   if (x == "") {
-    alert("website address must be filled out");
+    alert("Please fill in your email and try again!");
     return false;
   }
 }
@@ -157,10 +157,21 @@ $( "#myform" ).validate({
   }
 });
 
-function ValidURL(str) {
-  var regex = /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?\/?$/gm;
-  if (!regex.test(str)|| (str.length <= 3)) {
-      alert("Please enter valid URL.");
-      return false;
+
+function validateEmail(email) {
+  // Regular expression to match only organizational email domains
+  const allowedDomainsRegex = /@(?!me\.com|mac\.com|icloud\.com|gmail\.com|googlemail\.com|hotmail\.com|live\.com|msn\.com|outlook\.com|yahoo\.com|ymail\.com|aol\.com|google\.com|test\.com|xyz\.com|zoho\.com)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (!allowedDomainsRegex.test(email)) {
+      alert("Please enter a valid organizational email address.");
+      document.getElementById("fields").value = "";
   }
 }
+
+// function ValidURL(str) {
+//   var regex = /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?\/?$/gm;
+//   if (!regex.test(str)|| (str.length <= 3)) {
+//       alert("Please enter valid URL.");
+//       return false;
+//   }
+// }
