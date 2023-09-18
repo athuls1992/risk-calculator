@@ -63,11 +63,15 @@
               <option id="employee6" value="161">1000+</option>
               </select>
           </div>
-          <div class="group">
+          <!-- <div class="group">
             <div class="title" id="dname">Company website address?</div>        
             <input type="url" class="domain-type" id="fields" name="field" placeholder="https://example.com" pattern="https://.*" onblur="ValidURL(this.value)"/>
-          </div>
-        </form>
+          </div> -->
+          <div class="group">
+            <div class="title" id="dname">Organizational email address?</div>
+            <input type="email" class="domain-type" id="fields" name="field" placeholder="you@example.com" onblur="validateEmail(this.value)" />
+        </div>
+         </form>
       </div>
       <div class="center">
         <div class="center-button">
